@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+# PATHS
+export NPM_PACKAGES=$HOME/.npm-packages
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+export PATH=$NPM_PACKAGES/bin:$PATH
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
+export PATH=$HOME/bin:$PATH
+export PATH=$PATH:$HOME/go/bin
+
+# ALIASES
+alias l='exa -g --icons'
+alias ll='exa -g --icons -l'
+alias la='exa -g --icons -la'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias autopep8='autopep8.py'
+
+# ENV
+export EDITOR="vim"
+export BAT_THEME="Coldark-Dark"
+export XSECURELOCK_PASSWORD_PROMPT="asterisks"
+export XSECURELOCK_COMPOSITE_OBSCURER=0
+
+# RUST
+. "$HOME/.cargo/env"
+
+# Personal Alias
+alias work="cd $HOME/KerjaPraktek/Work/"
+alias activate="source devEnv/bin/activate"
+alias git_tree="git log --graph --pretty=oneline --abbrev-commit"
+alias vi='/usr/bin/nvim'
