@@ -53,7 +53,7 @@ end
 local gofmt = function()
   return {
     exe = 'gofmt',
-    stdin = false,
+    stdin = true,
     args = { vim.api.nvim_buf_get_name(0) },
   }
 end
