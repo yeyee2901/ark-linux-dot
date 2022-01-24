@@ -17,6 +17,10 @@ alias la='exa -g --icons -la'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias autopep8='autopep8.py'
 
+# alias kerjaan
+alias ssh_staging='ssh staging@192.168.247.160'
+alias sftp_staging='sftp staging@192.168.247.160'
+
 # ENV
 export EDITOR="vim"
 export BAT_THEME="Coldark-Dark"
