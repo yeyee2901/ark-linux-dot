@@ -1,10 +1,9 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 # Load config
 source $HOME/.config/scripts/dmenu/config.sh
 
-TEXT_EDITOR="kitty -e nvim"
-DMENU_PROMPT='Open config file: '
+DMENU_PROMPT='Quick Launch:'
 
 alias DMENU_LAUNCH=" \
     dmenu -fn '$DMENU_FONT' \
@@ -15,7 +14,7 @@ alias DMENU_LAUNCH=" \
 "
 
 declare -a choices=(
-    "Notes Wiki"
+    "Notes"
     "Whatsapp"
     "quit"
 )
@@ -30,8 +29,8 @@ if [[ "$choice" == "quit" ]]; then
 
 elif [[ "$choice" ]]; then
     case $choice in
-        "Notes Wiki")
-            nvim $HOME/Documents/notes-wiki/index.wiki ;;
+        "Notes")
+            kitty -e nvim $HOME/Documents/notes-wiki/index.wiki ;;
 
         "Whatsapp")
             chromium --new-window "https://web.whatsapp.com" ;;

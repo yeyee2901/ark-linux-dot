@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 # Load config
 source $HOME/.config/scripts/dmenu/config.sh

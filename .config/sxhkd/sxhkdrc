@@ -50,3 +50,7 @@ shift + Print
 # Open config files
 super + ctrl + space
     $HOME/.config/scripts/dmenu/open-config.sh
+
+# quick launcher my most used apps
+super + alt + space
+    $HOME/.config/scripts/dmenu/quick-launch.sh
