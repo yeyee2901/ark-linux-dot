@@ -34,6 +34,7 @@ require('packer').startup(function(use)
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'hrsh7th/cmp-path' }
   use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+  use { 'simrat39/symbols-outline.nvim' }
 
   use { 'neovim/nvim-lspconfig' }
   use { 'ray-x/lsp_signature.nvim' }
@@ -107,7 +108,7 @@ require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require 'dayum.plugins.indent-blankline'
-    end
+    end,
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

@@ -90,6 +90,9 @@ map('n', '<Leader>k',   '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', '<Leader>k',   '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', '<Leader>r',   '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
+-- PLUGIN: Symbols Outline (require LSP)
+map('n', '<Leader>o',   '<cmd>SymbolsOutline<CR>', opts)
+
 
 -- PLUGIN: Telescope
 map('n', '<Leader>t?',     '<cmd>Telescope keymaps<CR>', opts)
