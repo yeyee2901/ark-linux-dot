@@ -16,6 +16,11 @@ alias DMENU_LAUNCH=" \
 declare -a choices=(
     "Notes"
     "Whatsapp"
+
+    "WPS - Writer"
+    "WPS - Spreadsheet"
+    "WPS - Powerpoint"
+
     "quit"
 )
 
@@ -34,6 +39,17 @@ elif [[ "$choice" ]]; then
 
         "Whatsapp")
             chromium --new-window "https://web.whatsapp.com" ;;
+
+        WPS*)
+            case $choice in
+                *Writer)
+                    wps ;;
+                *Spreadsheet)
+                    et ;;
+                *Powerpoint)
+                    wpp ;;
+            esac
+
     esac
 # or maybe if the user pressed ESC (same as quit)
 else
