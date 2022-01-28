@@ -2,6 +2,7 @@
 
 # Load config
 source $HOME/.config/scripts/dmenu/config.sh
+source $HOME/.alias_envs
 
 DMENU_PROMPT='Quick Launch:'
 
@@ -20,6 +21,7 @@ declare -a choices=(
     "WPS - Writer"
     "WPS - Spreadsheet"
     "WPS - Powerpoint"
+    "WPS - PDF"
 
     "quit"
 )
@@ -48,6 +50,8 @@ elif [[ "$choice" ]]; then
                     et ;;
                 *Powerpoint)
                     wpp ;;
+                *PDF)
+                    wpspdf ;;
             esac
 
     esac

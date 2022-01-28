@@ -3,3 +3,17 @@ defer func($0){
 	fmt.Println($1)
 }($2)
 endsnippet
+
+snippet funcm "method for structs"
+func (T *${1:type}) ${2:MethodName}(${3:params}) (${4:returns}){
+	${5:// body}
+}
+endsnippet
+
+snippet recover_func "Defered recovery function"
+defer func() {
+	if err := recover(); err != nil {
+		${1:// fmt.Println(err)}
+	}
+}()
+endsnippet

@@ -45,47 +45,24 @@ require('packer').startup(function(use)
   use { 'nvim-lua/plenary.nvim' }
   use { 'fhill2/telescope-ultisnips.nvim' }
 
-  use {
-    'nvim-telescope/telescope.nvim',
-    config = function()
-      require 'dayum.plugins.telescope'
-    end,
-  }
+  use { 'nvim-telescope/telescope.nvim', }
 
   -- STARTIFY
   use { 'mhinz/vim-startify' }
 
   -- FORMATTER
-  use {
-    'mhartington/formatter.nvim',
-    config = function()
-      require 'dayum.plugins.formatter'
-    end,
-  }
+  use { 'mhartington/formatter.nvim', }
 
   -- GIT SUPERPOWER
   use { 'tpope/vim-fugitive' }
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require 'dayum.plugins.gitsigns'
-    end,
-  }
+  use { 'lewis6991/gitsigns.nvim', }
 
   -- NOTE TAKING
-  use {
-    'vimwiki/vimwiki',
-    config = function()
-      vim.cmd [[source $HOME/.config/nvim/lua/dayum/plugins/vimwiki.vim]]
-    end,
-  }
+  use { 'vimwiki/vimwiki', }
 
   -- CSS COLOR MARKER
   use {
     'norcalli/nvim-colorizer.lua',
-    config = function()
-      require 'dayum.plugins.colorizer'
-    end,
   }
 
   -- COMMENTARY PLUGIN
@@ -96,20 +73,13 @@ require('packer').startup(function(use)
   use { 'tpope/vim-surround' }
 
   -- REMOTE EDITING
-  use {
-    'chipsenkbeil/distant.nvim',
-    config = function()
-      require 'dayum.plugins.distant'
-    end,
-  }
+  use { 'chipsenkbeil/distant.nvim' }
 
   -- INDENT BLANKLINE
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require 'dayum.plugins.indent-blankline'
-    end,
-  }
+  use { 'lukas-reineke/indent-blankline.nvim' }
+
+  -- GO utils
+  use { 'ray-x/go.nvim' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -117,3 +87,5 @@ require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
+require 'dayum.plugins.activate'

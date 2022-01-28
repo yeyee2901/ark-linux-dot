@@ -1,3 +1,6 @@
+-- SECTION: GLOBAL VARS
+MY_HOME = os.getenv 'HOME'
+
 -- SECTION: SERVER SETTINGS
 vim.fn.sign_define(
   'DiagnosticSignError',
@@ -92,9 +95,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true
 
-lspconfig.gopls.setup{
+lspconfig.gopls.setup {
+  cmd = { '/home/yeyee/go/bin/gopls' },
   capabilities = capabilities,
-  on_attachh = custom_on_attach
+  on_attachh = custom_on_attach,
 }
 
 lspconfig.ccls.setup {
@@ -172,7 +176,7 @@ lspconfig.bashls.setup {
 }
 
 -- npm i -g vim-language-server
-lspconfig.vimls.setup{
+lspconfig.vimls.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
 }

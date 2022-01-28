@@ -117,6 +117,11 @@ _G.packer_plugins = {
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   ["indent-blankline.nvim"] = {
     config = { "\27LJ\1\2>\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0#dayum.plugins.indent-blankline\frequire\0" },
     loaded = true,

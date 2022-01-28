@@ -2,6 +2,7 @@
 
 # Load config
 source $HOME/.config/scripts/dmenu/config.sh
+source $HOME/.alias_envs
 
 TEXT_EDITOR="kitty -e nvim"
 DMENU_PROMPT='Open config file: '
