@@ -2,7 +2,6 @@
 
 # Load config
 source $HOME/.config/scripts/dmenu/config.sh
-source $HOME/.alias_envs
 
 DMENU_PROMPT='Quick Launch:'
 
@@ -37,7 +36,7 @@ if [[ "$choice" == "quit" ]]; then
 elif [[ "$choice" ]]; then
     case $choice in
         "Notes")
-            kitty -e nvim $HOME/Documents/notes-wiki/index.wiki ;;
+            kitty -e nvim $HOME/Documents/neorg-notes/index.norg ;;
 
         "Whatsapp")
             chromium --new-window "https://web.whatsapp.com" ;;

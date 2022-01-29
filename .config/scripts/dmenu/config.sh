@@ -1,3 +1,5 @@
+source $HOME/.alias_envs
+
 DMENU_FONT="JetBrainsMono Nerd Font:style=bold:size=12"
 
 # Not selected items

@@ -128,19 +128,6 @@ map('i', '<C-s>', '<cmd>Telescope ultisnips<CR>', opts)
 map('n', '<Leader>ff', '<cmd>Format<CR>', opts)
 
 
--- PLUGIN: VimWiki
-map('n', '<Leader>wj',    '<cmd>VimwikiNextLink<CR>', opts)
-map('n', '<Leader>wk',    '<cmd>VimwikiPrevLink<CR>', opts)
-map('n', '<Leader>wtl',   '<cmd>VimwikiToggleListItem<CR>', opts)
-map('n', '<Leader>wtbc',  '<cmd>VimwikiTable<CR>', opts)
-map('n', '<Leader>wtbl',  '<cmd>VimwikiTableMoveColumnRight<CR>', opts)
-map('n', '<Leader>wtbh',  '<cmd>VimwikiTableMoveColumnLeft<CR>', opts)
-map('n', '<Leader>wa',    '<cmd>VimwikiAll2HTML<CR>', opts)
-map('n', '<CR><CR>',      '<cmd>VimwikiFollowLink<CR>', opts)
-map('n', '<CR>s',         '<cmd>VimwikiSplitLink<CR>', opts)
-map('n', '<CR>v',         '<cmd>VimwikiVSplitLink<CR>', opts)
-
-
 -- PLUGIN: Fugitive
 map('n', '<Leader>gs', '<cmd>G<CR>', opts)
 map('n', '<Leader>ga', '<cmd>Git add .<CR>', opts)
