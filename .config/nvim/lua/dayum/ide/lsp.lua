@@ -23,14 +23,21 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 
 vim.diagnostic.config {
   signs = true,
-  virtual_text = {
-    source = 'always',
-  },
+  virtual_text = false,
   update_in_insert = true,
+  float = {
+    border = "double"
+  }
 }
 
 -- SECTION: SERVER SETUP
 local lspconfig = require 'lspconfig'
+
+-- update LSP capabilities to include nvim-cmp (completion)
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities.snippetSupport = true
+
 local custom_on_attach = function(client, _)
   -- Better function signature hinting
   require('lsp_signature').on_attach {
@@ -57,24 +64,6 @@ local custom_on_attach = function(client, _)
     use_lspsaga = false,
   }
 
-  -- autoformat on save
-  -- disable for some pre-configured formatter
-  if
-    client.name == 'tsserver' -- use prettier instead
-    or client.name == 'html' -- use prettier instead
-    or client.name == 'cssls' -- use prettier instead
-    or client.name == 'ccls' -- use clang-format instead
-    or client.name == 'rust_analyzer' -- use custom styled rustfmt instead
-  then
-    client.resolved_capabilities.document_formatting = false
-  end
-
-  -- if LSP has `document_formatting` method support, then create
-  -- autocommands for formatting on save
-  if client.resolved_capabilities.document_formatting then
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-  end
-
   -- highlight words with same context
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec(
@@ -88,17 +77,14 @@ local custom_on_attach = function(client, _)
       false
     )
   end
+
 end
 
--- update LSP capabilities to include nvim-cmp (completion)
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-capabilities.snippetSupport = true
 
 lspconfig.gopls.setup {
   cmd = { '/home/yeyee/go/bin/gopls' },
   capabilities = capabilities,
-  on_attachh = custom_on_attach,
+  on_attach = custom_on_attach,
 }
 
 lspconfig.ccls.setup {
@@ -182,33 +168,33 @@ lspconfig.vimls.setup {
 }
 
 -- SUMNEKO LUA
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
+-- local runtime_path = vim.split(package.path, ';')
+-- table.insert(runtime_path, 'lua/?.lua')
+-- table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
-  on_attach = custom_on_attach,
-  capabilities = capabilities,
+-- require('lspconfig').sumneko_lua.setup {
+--   on_attach = custom_on_attach,
+--   capabilities = capabilities,
 
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim', 'use' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file('', true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
+--   settings = {
+--     Lua = {
+--       runtime = {
+--         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--         version = 'LuaJIT',
+--         -- Setup your lua path
+--         path = runtime_path,
+--       },
+--       diagnostics = {
+--         globals = { 'vim', 'use' },
+--       },
+--       workspace = {
+--         -- Make the server aware of Neovim runtime files
+--         library = vim.api.nvim_get_runtime_file('', true),
+--       },
+--       -- Do not send telemetry data containing a randomized but unique identifier
+--       telemetry = {
+--         enable = false,
+--       },
+--     },
+--   },
+-- }

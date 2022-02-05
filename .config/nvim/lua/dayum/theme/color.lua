@@ -32,8 +32,8 @@ onedarkpro.load()
 
 
 -- Additional custom highlighting
-vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=none]]
-vim.cmd [[autocmd BufEnter * highlight Normal guibg=none]]
-vim.cmd [[highlight NormalFloat guibg=none]]
-vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=none]]
-vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=none]]
+vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=NONE]]
+vim.cmd [[autocmd BufEnter * highlight Normal guibg=NONE]]
+vim.cmd [[highlight NormalFloat guibg=NONE]]
+vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=NONE]]
+vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=NONE]]

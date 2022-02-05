@@ -8,16 +8,19 @@
 -- SECTION: BASIC SETTINGS
 require 'basic-settings'
 
--- SECTION: PLUGINS
-require 'dayum.plugins'
+-- SECTION: KEYMAPS
+require 'keymaps'
 
 -- SECTION: IDE experience
 require 'dayum.ide'
 
--- SECTION: KEYMAPS
-require 'dayum.keymaps'
+-- SECTION: PLUGINS
+require 'dayum.plugins'
 
 -- SECTION: UI
 require 'dayum.theme'
 
 vim.cmd [[source $HOME/.config/nvim/autocmd.vim]]
+
+-- SECTION: GLOBALS
+require 'my-globals'
