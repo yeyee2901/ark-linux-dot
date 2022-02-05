@@ -15,7 +15,7 @@ alias DMENU_LAUNCH=" \
 "
 
 declare -a choices=(
-    "Kitty - $HOME/DATA-SDA4/yeyee/.config/kitty/kitty.conf"
+    "Kitty - $HOME/.config/kitty/kitty.conf"
     "Neovim - $HOME/.config/nvim"
     "Vim - $HOME/.vimrc"
     "DWM - $HOME/.config/dwm/config.def.h"

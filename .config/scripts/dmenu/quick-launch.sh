@@ -36,7 +36,7 @@ if [[ "$choice" == "quit" ]]; then
 elif [[ "$choice" ]]; then
     case $choice in
         "Notes")
-            kitty -e nvim $HOME/Documents/neorg-notes/index.norg ;;
+            kitty -e nvim $HOME/Documents/neorg-notes ;;
 
         "Whatsapp")
             chromium --new-window "https://web.whatsapp.com" ;;
