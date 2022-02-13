@@ -14,7 +14,8 @@ alias DMENU_LAUNCH=" \
 "
 
 declare -a choices=(
-    "Kantor Magang - $HOME/.config/arandr/kantor-magang.sh"
+    "Kantor BAWAH atas - $HOME/.config/arandr/kantor-magang.sh"
+    "Kantor KIRI kanan - $HOME/.config/arandr/kantor-menyamping.sh"
 
     "quit"
 )
