@@ -8,4 +8,4 @@ require 'dayum.plugins.formatter'
 require 'dayum.plugins.neorg'
 require 'dayum.plugins.toggleterm'
 
-vim.notify = require 'notify'
+-- vim.notify = require 'notify'

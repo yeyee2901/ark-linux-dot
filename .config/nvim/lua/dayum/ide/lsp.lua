@@ -26,8 +26,8 @@ vim.diagnostic.config {
   virtual_text = false,
   update_in_insert = true,
   float = {
-    border = "double"
-  }
+    border = 'double',
+  },
 }
 
 -- SECTION: SERVER SETUP
@@ -77,9 +77,7 @@ local custom_on_attach = function(client, _)
       false
     )
   end
-
 end
-
 
 lspconfig.gopls.setup {
   cmd = { '/home/yeyee/go/bin/gopls' },
@@ -90,6 +88,20 @@ lspconfig.gopls.setup {
 lspconfig.ccls.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
+  init_options = {
+    diagnostics = {
+      onOpen = 0,
+      onChange = 1,
+      onSave = 0,
+    },
+    index = {
+      comments = 2,
+      onChange = true, -- force index file to be not on every save
+    },
+    cache = {
+      directory = "", -- have to disable caching, supaya tidak ada data race
+    }
+  },
 }
 
 lspconfig.pyright.setup {
