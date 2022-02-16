@@ -4,11 +4,11 @@ augroup Yanking
   autocmd TextYankPost * lua require("vim.highlight").on_yank({timeout = 300, on_visual = false})
 augroup END
 
-augroup CIndentation
+augroup IndentationGroup
   autocmd!
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set tabstop=2
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set softtabstop=2
-  autocmd FileType c,cpp,objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set shiftwidth=2
+  autocmd FileType objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set tabstop=2
+  autocmd FileType objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set softtabstop=2
+  autocmd FileType objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set shiftwidth=2
 augroup END
 
 " For c like files, clang formatting insist using 2 spaces

@@ -27,6 +27,7 @@ require('packer').startup(function(use)
   -- IDE
   use { 'onsails/lspkind-nvim' }
   use { 'nvim-treesitter/nvim-treesitter' }
+  use { 'romgrk/nvim-treesitter-context' }
   use { 'honza/vim-snippets' }
   use { 'SirVer/ultisnips' }
   use { 'hrsh7th/nvim-cmp' }

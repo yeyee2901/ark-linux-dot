@@ -5,9 +5,14 @@ onedarkpro.setup({
   colors = {}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes
   hlgroups = {}, -- Override default highlight groups
   plugins = { -- Override which plugins highlight groups are loaded
+    nvim_cmp = true,
+    barbar = true,
 		native_lsp = true,
-		polygot = true,
 		treesitter = true,
+    startify = true,
+    nvim_tree = true,
+    toggleterm = true,
+    telescope = true,
 	},
   styles = {
       strings = "italic", -- Style that is applied to strings
@@ -24,7 +29,7 @@ onedarkpro.setup({
       cursorline = true, -- Use cursorline highlighting?
       transparency = true, -- Use a transparent background?
       terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
-      window_unfocussed_color = false, -- When the window is out of focus, change the normal background?
+      window_unfocussed_color = true, -- When the window is out of focus, change the normal background?
   }
 })
 

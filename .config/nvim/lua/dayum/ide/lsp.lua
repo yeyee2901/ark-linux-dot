@@ -95,7 +95,7 @@ lspconfig.ccls.setup {
       onSave = 0,
     },
     index = {
-      comments = 2,
+      comments = 1, -- index only doxygen comment markers
       onChange = true, -- force index file to be not on every save
     },
     cache = {
@@ -104,9 +104,16 @@ lspconfig.ccls.setup {
   },
 }
 
-lspconfig.pyright.setup {
+-- lspconfig.pyright.setup {
+--   capabilities = capabilities,
+--   on_attach = custom_on_attach,
+-- }
+
+-- alternative (kayaknya lebih bagus dari pyright)
+lspconfig.pylsp.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
+  single_file_support = false,
 }
 
 -- npm i -g vscode-langservers-extracted
