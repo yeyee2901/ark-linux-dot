@@ -99,8 +99,8 @@ lspconfig.ccls.setup {
       onChange = true, -- force index file to be not on every save
     },
     cache = {
-      directory = "", -- have to disable caching, supaya tidak ada data race
-    }
+      directory = '', -- have to disable caching, supaya tidak ada data race
+    },
   },
 }
 
@@ -109,18 +109,17 @@ lspconfig.ccls.setup {
 --   on_attach = custom_on_attach,
 -- }
 
--- alternative (kayaknya lebih bagus dari pyright)
-lspconfig.pylsp.setup {
+-- ALTERNATIVE: (masih coba-coba)
+lspconfig.jedi_language_server.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
-  single_file_support = false,
 }
 
 -- npm i -g vscode-langservers-extracted
-lspconfig.html.setup {
-  capabilities = capabilities,
-  on_attach = custom_on_attach,
-}
+-- lspconfig.html.setup {
+--   capabilities = capabilities,
+--   on_attach = custom_on_attach,
+-- }
 
 -- npm i -g intelephense
 lspconfig.intelephense.setup {

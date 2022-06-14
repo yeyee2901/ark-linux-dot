@@ -39,14 +39,19 @@ cmp.setup({
 		}),
 	},
 
-	documentation = {
-		border = "rounded",
-		winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-		max_width = 100,
-		min_width = 60,
-		max_height = math.floor(vim.o.lines * 0.3),
-		min_height = 1,
-	},
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered()
+    },
+
+	-- documentation = {
+	-- 	border = "rounded",
+	-- 	winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+	-- 	max_width = 100,
+	-- 	min_width = 60,
+	-- 	max_height = math.floor(vim.o.lines * 0.3),
+	-- 	min_height = 1,
+	-- },
 
 	-- short format
 	formatting = {

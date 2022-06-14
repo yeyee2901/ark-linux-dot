@@ -8,5 +8,3 @@ require 'dayum.plugins.formatter'
 require 'dayum.plugins.neorg'
 require 'dayum.plugins.toggleterm'
 require 'dayum.plugins.ts-context'
-
--- vim.notify = require 'notify'

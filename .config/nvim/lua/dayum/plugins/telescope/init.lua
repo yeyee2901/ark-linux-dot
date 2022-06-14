@@ -18,7 +18,7 @@ require('telescope').setup {
       '--column',
       '--smart-case',
     },
-    prompt_prefix = ' (ﾉ>ω<)ﾉ  ',
+    prompt_prefix = ' (>ω<)  ',
     selection_caret = '-> ',
     entry_prefix = '  ',
     initial_mode = 'insert',

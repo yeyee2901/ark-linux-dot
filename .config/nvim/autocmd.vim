@@ -24,10 +24,7 @@ augroup VimWikiGroup
   autocmd FileType vimwiki set shiftwidth=2
 augroup END
 
-" Color Column for specific filetype
-augroup ColorColumnAuto
-  autocmd!
-  autocmd FileType python set colorcolumn=80
-  autocmd FileType vimwiki set colorcolumn=80
-  autocmd FileType rust set colorcolumn=80
-augroup END
+" augroup CommentStrings
+"     autocmd!
+"     autocmd FileType c,cpp set commentstring=// %s
+" augroup END
