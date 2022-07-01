@@ -108,7 +108,10 @@ require('packer').startup(function(use)
   use { 'ray-x/go.nvim' }
 
   -- TOGGLETERM
-  use { 'akinsho/toggleterm.nvim' }
+  use { 
+    'akinsho/toggleterm.nvim',
+    lock = true,
+  }
 
   -- NOTIFY
   -- use { 'rcarriga/nvim-notify' }
