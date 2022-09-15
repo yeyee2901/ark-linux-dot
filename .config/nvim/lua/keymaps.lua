@@ -53,23 +53,22 @@ NORMAL_MODE_MAPPING = {
   { ['<S-r>'] = '<C-w>r' },
 
   -- PLUGIN: barbar.nvim
-  { ['<Tab><Tab>'] = ':e<CR>' },
-  { ['<Tab>l'] = '<cmd>BufferNext<CR>' },
-  { ['<Tab>h'] = '<cmd>BufferPrevious<CR>' },
-  { ['<Tab>1'] = '<cmd>BufferGoto 1<CR>' },
-  { ['<Tab>2'] = '<cmd>BufferGoto 2<CR>' },
-  { ['<Tab>3'] = '<cmd>BufferGoto 3<CR>' },
-  { ['<Tab>4'] = '<cmd>BufferGoto 4<CR>' },
-  { ['<Tab>5'] = '<cmd>BufferGoto 5<CR>' },
-  { ['<Tab>6'] = '<cmd>BufferGoto 6<CR>' },
-  { ['<Tab>7'] = '<cmd>BufferGoto 7<CR>' },
-  { ['<Tab>8'] = '<cmd>BufferGoto 8<CR>' },
-  { ['<Tab>9'] = '<cmd>BufferGoto 9<CR>' },
-  { ['<Tab>0'] = '<cmd>BufferLast<CR>' },
-  { ['<Tab>g'] = '<cmd>BufferPick<CR>' },
-  { ['<Tab>H'] = '<cmd>BufferMovePrevious<CR>' },
-  { ['<Tab>L'] = '<cmd>BufferMoveNext<CR>' },
-  { ['<Tab>q'] = '<cmd>BufferClose<CR>' },
+  { ['<Tab>l']      = '<cmd>BufferNext<CR>' },
+  { ['<Tab>h']      = '<cmd>BufferPrevious<CR>' },
+  { ['<Tab>1']      = '<cmd>BufferGoto 1<CR>' },
+  { ['<Tab>2']      = '<cmd>BufferGoto 2<CR>' },
+  { ['<Tab>3']      = '<cmd>BufferGoto 3<CR>' },
+  { ['<Tab>4']      = '<cmd>BufferGoto 4<CR>' },
+  { ['<Tab>5']      = '<cmd>BufferGoto 5<CR>' },
+  { ['<Tab>6']      = '<cmd>BufferGoto 6<CR>' },
+  { ['<Tab>7']      = '<cmd>BufferGoto 7<CR>' },
+  { ['<Tab>8']      = '<cmd>BufferGoto 8<CR>' },
+  { ['<Tab>9']      = '<cmd>BufferGoto 9<CR>' },
+  { ['<Tab>0']      = '<cmd>BufferLast<CR>' },
+  { ['<Tab><Tab>']  = '<cmd>BufferPick<CR>' },
+  { ['<Tab>H']      = '<cmd>BufferMovePrevious<CR>' },
+  { ['<Tab>L']      = '<cmd>BufferMoveNext<CR>' },
+  { ['<Tab>q']      = '<cmd>BufferClose<CR>' },
 
   -- PLUGIN: Nvim-tree
   { ['<Leader>n'] = '<cmd>NvimTreeToggle<CR>' },
@@ -120,6 +119,10 @@ NORMAL_MODE_MAPPING = {
   -- PLUGIN: ToggleTerm
   { ['TT'] = '<cmd>ToggleTerm<CR>' },
   { ['TH'] = '<cmd>ToggleTerm direction=horizontal size=10<CR>' },
+
+  -- PLUGIN: GO.nvim
+  { ['<Leader><Leader>gt'] = ':GoAddTag<CR>'},
+  { ['<Leader><Leader>gi'] = ':GoImport<CR>'},
 }
 
 ---------------------------------------------

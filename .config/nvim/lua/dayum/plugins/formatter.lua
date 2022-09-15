@@ -58,6 +58,14 @@ local gofmt = function()
   }
 end
 
+local protobuf = function()
+  return {
+    exe = 'clang-format',
+    stdin = true,
+    args = { vim.api.nvim_buf_get_name(0) },
+  }
+end
+
 require('formatter').setup {
   logging = true,
   filetype = {
@@ -69,15 +77,12 @@ require('formatter').setup {
     javascriptreact = { prettier },
     typescript = { prettier },
     typescriptreact = { prettier },
-
     c = { clang_format },
     cpp = { clang_format },
-
     python = { autopep },
-
     rust = { rustfmt },
     go = { gofmt },
-
     lua = { stylua },
+    proto = { protobuf }
   },
 }

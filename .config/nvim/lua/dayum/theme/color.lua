@@ -44,3 +44,5 @@ vim.cmd [[autocmd BufEnter * highlight Normal guibg=NONE]]
 vim.cmd [[highlight NormalFloat guibg=NONE]]
 vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=NONE]]
 vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=NONE]]
+
+vim.cmd [[hi CursorLine guibg=#2e2e2e]]

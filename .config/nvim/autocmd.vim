@@ -24,7 +24,10 @@ augroup VimWikiGroup
   autocmd FileType vimwiki set shiftwidth=2
 augroup END
 
-" augroup CommentStrings
-"     autocmd!
-"     autocmd FileType c,cpp set commentstring=// %s
-" augroup END
+" For protobuf
+augroup ProtobufGroup
+  autocmd!
+  autocmd FileType proto set tabstop=2
+  autocmd FileType proto set softtabstop=2
+  autocmd FileType proto set shiftwidth=2
+augroup END
