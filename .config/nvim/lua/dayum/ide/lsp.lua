@@ -38,7 +38,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.snippetSupport = true
 
-local custom_on_attach = function(client, _)
+local custom_on_attach = function(client, bufnr)
   -- Better function signature hinting
   require('lsp_signature').on_attach {
     bind = true, -- Mandatory for config
@@ -77,6 +77,9 @@ local custom_on_attach = function(client, _)
       false
     )
   end
+
+  -- Signature Aerial.nvim
+  require("aerial").on_attach(client, bufnr)
 end
 
 lspconfig.gopls.setup {
@@ -184,6 +187,13 @@ lspconfig.vimls.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
 }
+
+-- npm i -g docker-file-language-server-nodejs
+lspconfig.dockerls.setup {
+  capabilities = capabilities,
+  on_attach = custom_on_attach,
+}
+
 
 -- SUMNEKO LUA
 -- local runtime_path = vim.split(package.path, ';')

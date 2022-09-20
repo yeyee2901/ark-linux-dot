@@ -9,6 +9,7 @@ export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/.local/lib/python3.10/site-packages
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
+# export PATH=$PATH:$HOME/Citra/citra/build/bin/Release
 
 # ALIASES
 alias l='exa -g --icons'
@@ -33,3 +34,5 @@ alias work="cd $HOME/KerjaPraktek/Work/"
 alias activate="source devEnv/bin/activate"
 alias git_tree="git log --graph --pretty=oneline --abbrev-commit"
 alias vi='/usr/bin/nvim'
+alias pdf='wpspdf'
+

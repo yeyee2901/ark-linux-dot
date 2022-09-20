@@ -21,7 +21,9 @@ VISUAL_MODE_MAPPING = {
   { ['aa'] = '$<S-a>' },
 }
 
-INSERT_MODE_MAPPING = {}
+INSERT_MODE_MAPPING = {
+  { ["<C-K>"] = "<cmd>lua vim.lsp.buf.signature_help()<CR>" }
+}
 
 NORMAL_MODE_MAPPING = {
   -- SESSION
@@ -73,8 +75,8 @@ NORMAL_MODE_MAPPING = {
   -- PLUGIN: Nvim-tree
   { ['<Leader>n'] = '<cmd>NvimTreeToggle<CR>' },
 
-  -- PLUGIN: Symbols-outline (requires LSP)
-  { ['<Leader>o'] = '<cmd>SymbolsOutline<CR>' },
+  -- PLUGIN: Aerial.nvim (symbol outline)
+  { ['<Leader>o'] = "<cmd>AerialToggle right<CR>"},
 
   -- PLUGIN: Telescope
   { ['<Leader>t?'] = '<cmd>Telescope keymaps<CR>' },
@@ -121,8 +123,10 @@ NORMAL_MODE_MAPPING = {
   { ['TH'] = '<cmd>ToggleTerm direction=horizontal size=10<CR>' },
 
   -- PLUGIN: GO.nvim
-  { ['<Leader><Leader>gt'] = ':GoAddTag<CR>'},
-  { ['<Leader><Leader>gi'] = ':GoImport<CR>'},
+  { ['<Leader>Gt'] = ':GoAddTag<CR>'},
+  { ['<Leader>Gi'] = ':GoImport<CR>'},
+  { ['<Leader>Ga'] = ':GoImport<CR>'},
+  { ['<Leader>Gm'] = ':GoModTidy<CR>'},
 }
 
 ---------------------------------------------

@@ -26,6 +26,7 @@ local my_options = {
   lazyredraw = true,
   splitbelow = true,
   splitright = true,
+  laststatus = 3,
 }
 
 -- Allow Lua syntax in vimscripts ('l' as in lua)

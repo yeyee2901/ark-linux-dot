@@ -3,7 +3,7 @@ local onedarkpro = require("onedarkpro")
 onedarkpro.setup({
   -- theme = function(), -- Override with "onedark" or "onelight". Alternatively, don't set the option and the theme will use `vim.o.background` to determine what to load
   colors = {}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes
-  hlgroups = {}, -- Override default highlight groups
+  highlights = {}, -- Override default highlight groups
   plugins = { -- Override which plugins highlight groups are loaded
     nvim_cmp = true,
     barbar = true,
@@ -29,7 +29,7 @@ onedarkpro.setup({
       cursorline = true, -- Use cursorline highlighting?
       transparency = true, -- Use a transparent background?
       terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
-      window_unfocussed_color = true, -- When the window is out of focus, change the normal background?
+      window_unfocused_color = true, -- When the window is out of focus, change the normal background?
   }
 })
 
