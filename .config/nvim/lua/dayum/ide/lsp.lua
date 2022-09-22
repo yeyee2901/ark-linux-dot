@@ -33,6 +33,33 @@ vim.diagnostic.config {
 -- SECTION: SERVER SETUP
 local lspconfig = require 'lspconfig'
 
+-- LSP Saga is backkkkk
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+  border_style = 'rounded',
+
+  -- 100 = fully transparent
+  saga_winblend = 0,
+
+  code_action_lightbulb = {
+    enable = true,
+    enable_in_insert = false,
+    cache_code_action = true,
+    sign = true,
+    update_time = 300,
+    sign_priority = 20,
+    virtual_text = true,
+  },
+
+  finder_action_keys = {
+    open = "o",
+    vsplit = "v",
+    split = "s",
+    tabe = "t",
+    quit = "q",
+  },
+}
+
 -- update LSP capabilities to include nvim-cmp (completion)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -61,11 +88,11 @@ local custom_on_attach = function(client, bufnr)
 
     -- WARNING: Glepnir is inactive for > 8 months, so there won't be any
     -- bug fixes
-    use_lspsaga = false,
+    use_lspsaga = true,
   }
 
   -- highlight words with same context
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       augroup LSP_DOC_HIGHLIGHT
@@ -79,7 +106,7 @@ local custom_on_attach = function(client, bufnr)
   end
 
   -- Signature Aerial.nvim
-  require("aerial").on_attach(client, bufnr)
+  require('aerial').on_attach(client, bufnr)
 end
 
 lspconfig.gopls.setup {
@@ -193,7 +220,6 @@ lspconfig.dockerls.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
 }
-
 
 -- SUMNEKO LUA
 -- local runtime_path = vim.split(package.path, ';')

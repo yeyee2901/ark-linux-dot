@@ -33,6 +33,6 @@ export XSECURELOCK_COMPOSITE_OBSCURER=0
 alias work="cd $HOME/KerjaPraktek/Work/"
 alias activate="source devEnv/bin/activate"
 alias git_tree="git log --graph --pretty=oneline --abbrev-commit"
-alias vi='/usr/bin/nvim'
+alias vi='nvim'
 alias pdf='wpspdf'
 

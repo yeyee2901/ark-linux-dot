@@ -36,6 +36,10 @@ require('packer').startup(function(use)
   use { 'hrsh7th/cmp-path' }
   use { 'quangnguyen30192/cmp-nvim-ultisnips' }
   use { 'stevearc/aerial.nvim' }
+  use { 
+    'glepnir/lspsaga.nvim', 
+    branch = 'main' 
+  }
 
   use { 'neovim/nvim-lspconfig' }
   use { 'ray-x/lsp_signature.nvim' }
@@ -108,7 +112,7 @@ require('packer').startup(function(use)
   use { 'ray-x/go.nvim' }
 
   -- TOGGLETERM
-  use { 
+  use {
     'akinsho/toggleterm.nvim',
     lock = true,
   }

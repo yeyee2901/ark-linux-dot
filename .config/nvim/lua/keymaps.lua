@@ -112,11 +112,16 @@ NORMAL_MODE_MAPPING = {
   { ['K'] = '<cmd>lua vim.lsp.buf.hover()<CR>' },
   { ['<Leader>K'] = '<cmd>lua vim.lsp.buf.signature_help()<CR>' },
   { ['gd'] = '<cmd>lua vim.lsp.buf.definition()<CR>' },
-  { ['<Leader>lr'] = '<cmd>lua vim.lsp.buf.references()<CR>' },
+  -- { ['<Leader>lr'] = '<cmd>lua vim.lsp.buf.references()<CR>' },  -- substituted by "Lspsaga lsp_finder"
   { ['<Leader>j'] = '<cmd>lua vim.diagnostic.goto_next()<CR>' },
   { ['<Leader>k'] = '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
   { ['<Leader>k'] = '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
   { ['<Leader>r'] = '<cmd>lua vim.lsp.buf.rename()<CR>' },
+
+  -- PLUGIN: LSP saga
+  { ['<Leader>lp'] = '<cmd>Lspsaga peek_definition<CR>' },
+  { ['<Leader>la'] = '<cmd>Lspsaga code_action<CR>' },
+  { ['<Leader>lr'] = '<cmd>Lspsaga lsp_finder<CR>' },
 
   -- PLUGIN: ToggleTerm
   { ['TT'] = '<cmd>ToggleTerm<CR>' },
