@@ -31,3 +31,10 @@ augroup ProtobufGroup
   autocmd FileType proto set softtabstop=2
   autocmd FileType proto set shiftwidth=2
 augroup END
+
+augroup FlutterGroup
+  autocmd!
+  autocmd FileType dart set tabstop=2
+  autocmd FileType dart set softtabstop=2
+  autocmd FileType dart set shiftwidth=2
+augroup END

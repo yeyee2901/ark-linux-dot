@@ -1,7 +1,9 @@
-local onedarkpro = require("onedarkpro")
+local onedarkpro = require 'onedarkpro'
 
 onedarkpro.setup({
-  -- theme = function(), -- Override with "onedark" or "onelight". Alternatively, don't set the option and the theme will use `vim.o.background` to determine what to load
+  -- theme = "onelight",
+  -- theme = "onedark_dark",
+  theme = "onedark_vivid",
   colors = {}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes
   highlights = {}, -- Override default highlight groups
   plugins = { -- Override which plugins highlight groups are loaded
@@ -17,7 +19,7 @@ onedarkpro.setup({
   styles = {
       strings = "italic", -- Style that is applied to strings
       comments = "NONE", -- Style that is applied to comments
-      keywords = "bold", -- Style that is applied to keywords
+      keywords = "bold,italic", -- Style that is applied to keywords
       functions = "bold", -- Style that is applied to functions
       variables = "NONE", -- Style that is applied to variables
   },
@@ -34,7 +36,6 @@ onedarkpro.setup({
 })
 
 onedarkpro.load()
-
 
 -- Additional custom highlighting
 vim.cmd [[autocmd BufEnter * highlight TelescopeNormal guibg=NONE]]

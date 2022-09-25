@@ -13,8 +13,6 @@ end
 
 require('packer').startup(function(use)
   -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
   use { 'wbthomason/packer.nvim' }
 
   -- THEME
@@ -111,14 +109,14 @@ require('packer').startup(function(use)
   -- GO utils
   use { 'ray-x/go.nvim' }
 
+  -- FLUTTER
+  use { 'akinsho/flutter-tools.nvim' }
+
   -- TOGGLETERM
   use {
     'akinsho/toggleterm.nvim',
     lock = true,
   }
-
-  -- NOTIFY
-  -- use { 'rcarriga/nvim-notify' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

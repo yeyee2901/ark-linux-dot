@@ -4,7 +4,7 @@ if not telescope_ok then
   return
 end
 
-local preview_size = 30 -- 50% of the screen size
+local preview_size = 50 -- in percent
 local transparency = 0 -- in percent
 
 require('telescope').setup {
@@ -27,8 +27,11 @@ require('telescope').setup {
     layout_strategy = 'horizontal',
     layout_config = {
       horizontal = {
-        height = preview_size,
-        mirror = false,
+        height = 0.9,
+        preview_cutoff = 120,        -- if column assigned to telescope < ini, maka preview di skip
+        preview_width = 90,          -- ini yg mbok cari
+        prompt_position = "bottom",
+        width = 0.8
       },
       vertical = {
         height = preview_size,
@@ -61,4 +64,9 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension 'ultisnips'
---require("telescope").load_extension("project")
+
+-- check for flutter extension
+local flutter_ok, _ = pcall(require, 'flutter')
+
+require('telescope').load_extension('flutter')
+vim.keymap.set('n', '<leader>tF', require('telescope').extensions.flutter.commands)

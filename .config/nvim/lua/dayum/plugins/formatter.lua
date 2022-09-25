@@ -66,6 +66,14 @@ local protobuf = function()
   }
 end
 
+local dart = function()
+  return {
+    exe = 'flutter format',
+    stdin = false,
+    args = { vim.api.nvim_buf_get_name(0) },
+  }
+end
+
 require('formatter').setup {
   logging = true,
   filetype = {
@@ -83,6 +91,7 @@ require('formatter').setup {
     rust = { rustfmt },
     go = { gofmt },
     lua = { stylua },
-    proto = { protobuf }
+    proto = { protobuf },
+    dart = { dart },
   },
 }

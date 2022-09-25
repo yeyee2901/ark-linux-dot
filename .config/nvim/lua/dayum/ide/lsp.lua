@@ -42,7 +42,7 @@ saga.init_lsp_saga {
   saga_winblend = 0,
 
   code_action_lightbulb = {
-    enable = true,
+    enable = false,
     enable_in_insert = false,
     cache_code_action = true,
     sign = true,
@@ -52,11 +52,11 @@ saga.init_lsp_saga {
   },
 
   finder_action_keys = {
-    open = "o",
-    vsplit = "v",
-    split = "s",
-    tabe = "t",
-    quit = "q",
+    open = 'o',
+    vsplit = 'v',
+    split = 's',
+    tabe = 't',
+    quit = 'q',
   },
 }
 
@@ -72,7 +72,7 @@ local custom_on_attach = function(client, bufnr)
     doc_lines = 5,
     fix_pos = false,
     hint_enable = true,
-    hint_prefix = '<> ',
+    hint_prefix = '🔍 ',
     hint_scheme = 'String',
 
     hi_parameter = 'Search',
@@ -86,8 +86,6 @@ local custom_on_attach = function(client, bufnr)
     -- disable it so I can read the completion pop up menu
     floating_window = false,
 
-    -- WARNING: Glepnir is inactive for > 8 months, so there won't be any
-    -- bug fixes
     use_lspsaga = true,
   }
 
@@ -105,7 +103,7 @@ local custom_on_attach = function(client, bufnr)
     )
   end
 
-  -- Signature Aerial.nvim
+  -- outline using aerial.nvim
   require('aerial').on_attach(client, bufnr)
 end
 
@@ -219,6 +217,64 @@ lspconfig.vimls.setup {
 lspconfig.dockerls.setup {
   capabilities = capabilities,
   on_attach = custom_on_attach,
+}
+
+-- FLUTTER --
+require('flutter-tools').setup {
+  ui = {
+    border = 'rounded',
+    notification_style = 'native',
+  },
+
+  debugger = { -- integrate with nvim dap + install dart code debugger
+    enabled = false,
+    run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+  },
+
+  widget_guides = {
+    enabled = true,
+  },
+
+  closing_tags = {
+    highlight = 'Comment', -- highlight for the closing tag
+    prefix = '>>', -- character to use for close tag e.g. > Widget
+    enabled = true, -- set to false to disable
+  },
+
+  dev_log = {
+    enabled = true,
+    open_cmd = 'tabedit', -- command to use to open the log buffer
+  },
+
+  dev_tools = {
+    autostart = false, -- autostart devtools server if not detected
+    auto_open_browser = false, -- Automatically opens devtools in the browser
+  },
+
+  outline = {
+    open_cmd = '30vnew', -- command to use to open the outline buffer
+    auto_open = false, -- if true this will open the outline automatically when it is first populated
+  },
+
+  lsp = {
+    color = { -- show the derived colours for dart variables
+      enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+      background = true, -- highlight the background
+      foreground = false, -- highlight the foreground
+      virtual_text = true, -- show the highlight using virtual text
+      virtual_text_str = '■', -- the virtual text character to highlight
+    },
+
+    on_attach = custom_on_attach,
+    capabilities = capabilities,
+    settings = {
+      showTodos = true,
+      completeFunctionCalls = true,
+      analysisExcludedFolders = {},
+      renameFilesWithClasses = 'prompt', -- "always"
+      enableSnippets = true,
+    },
+  },
 }
 
 -- SUMNEKO LUA

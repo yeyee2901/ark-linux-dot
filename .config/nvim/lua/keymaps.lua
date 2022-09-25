@@ -132,6 +132,9 @@ NORMAL_MODE_MAPPING = {
   { ['<Leader>Gi'] = ':GoImport<CR>'},
   { ['<Leader>Ga'] = ':GoImport<CR>'},
   { ['<Leader>Gm'] = ':GoModTidy<CR>'},
+
+  -- PLUGIN: Flutter
+  { ['<Leader>Fo'] = ':FlutterOutlineToggle<CR>'},
 }
 
 ---------------------------------------------

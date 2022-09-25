@@ -1,5 +1,10 @@
-local color_ok, _ = pcall(require, 'colorizer')
-
-if color_ok then
-  require('colorizer').setup()
-end
+-- require('colorizer').setup({
+--   css = { mode = 'background' };
+--   html = { mode = 'background' };
+--   javascript = { mode = 'background' };
+--   javascriptreact = { mode = 'background' };
+--   typescript = { mode = 'background' };
+--   typescriptreact = { mode = 'background' };
+--   dart = {
+--   };
+-- })
