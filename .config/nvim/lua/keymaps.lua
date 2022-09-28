@@ -67,10 +67,12 @@ NORMAL_MODE_MAPPING = {
   { ['<Tab>8']      = '<cmd>BufferGoto 8<CR>' },
   { ['<Tab>9']      = '<cmd>BufferGoto 9<CR>' },
   { ['<Tab>0']      = '<cmd>BufferLast<CR>' },
+  { ['<Tab>p']      = '<cmd>BufferPin<CR>' },
   { ['<Tab><Tab>']  = '<cmd>BufferPick<CR>' },
   { ['<Tab>H']      = '<cmd>BufferMovePrevious<CR>' },
   { ['<Tab>L']      = '<cmd>BufferMoveNext<CR>' },
   { ['<Tab>q']      = '<cmd>BufferClose<CR>' },
+  { ['<Tab>Q']      = '<cmd>BufferCloseAllButPinned<CR>' },
 
   -- PLUGIN: Nvim-tree
   { ['<Leader>n'] = '<cmd>NvimTreeToggle<CR>' },

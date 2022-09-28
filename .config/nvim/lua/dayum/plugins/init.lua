@@ -15,6 +15,9 @@ require('packer').startup(function(use)
   -- My plugins here
   use { 'wbthomason/packer.nvim' }
 
+  -- DISCORD
+  use { 'andweeb/presence.nvim' }
+
   -- THEME
   use { 'olimorris/onedarkpro.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
@@ -34,9 +37,9 @@ require('packer').startup(function(use)
   use { 'hrsh7th/cmp-path' }
   use { 'quangnguyen30192/cmp-nvim-ultisnips' }
   use { 'stevearc/aerial.nvim' }
-  use { 
-    'glepnir/lspsaga.nvim', 
-    branch = 'main' 
+  use {
+    'glepnir/lspsaga.nvim',
+    branch = 'main',
   }
 
   use { 'neovim/nvim-lspconfig' }
@@ -88,10 +91,9 @@ require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
   }
 
-  -- CSS COLOR MARKER
-  use {
-    'norcalli/nvim-colorizer.lua',
-  }
+  -- COLOR UTILS
+  -- use { 'norcalli/nvim-colorizer.lua' }
+  use { 'max397574/colortils.nvim' }
 
   -- COMMENTARY PLUGIN
   use { 'tpope/vim-commentary' }

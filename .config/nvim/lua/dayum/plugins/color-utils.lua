@@ -8,3 +8,5 @@
 --   dart = {
 --   };
 -- })
+
+require('colortils').setup()

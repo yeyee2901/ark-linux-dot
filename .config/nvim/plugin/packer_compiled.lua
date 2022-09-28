@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["colortils.nvim"] = {
+    loaded = true,
+    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/colortils.nvim",
+    url = "https://github.com/max397574/colortils.nvim"
+  },
   ["distant.nvim"] = {
     loaded = true,
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/distant.nvim",
     url = "https://github.com/chipsenkbeil/distant.nvim"
+  },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
   },
   ["formatter.nvim"] = {
     loaded = true,
@@ -165,11 +175,6 @@ _G.packer_plugins = {
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -214,6 +219,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/yeyee/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
   },
   ["telescope-ultisnips.nvim"] = {
     loaded = true,
