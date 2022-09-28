@@ -120,6 +120,14 @@ require('packer').startup(function(use)
     lock = true,
   }
 
+  -- DEBUGGER
+  use { 'mfussenegger/nvim-dap' }
+  use { 'leoluz/nvim-dap-go' }
+  use {
+    'rcarriga/nvim-dap-ui',
+    requires = { 'mfussenegger/nvim-dap' },
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

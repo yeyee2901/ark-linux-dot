@@ -137,6 +137,16 @@ NORMAL_MODE_MAPPING = {
 
   -- PLUGIN: Flutter
   { ['<Leader>Fo'] = ':FlutterOutlineToggle<CR>'},
+
+  -- PLUGIN: nvim dap (debugger)
+  { ['<Leader>dr']      = '<cmd>lua require("dap").run()<CR>' },
+  { ['<Leader>db']      = '<cmd>lua require("dap").toggle_breakpoint()<CR>' },
+  { ['<Leader>d<CR>']   = '<cmd>lua require("dap").continue()<CR>' },
+  { ['<Leader>dp']      = '<cmd>lua require("dap").pause()<CR>' },
+  { ['<Leader>dj']      = '<cmd>lua require("dap").step_over()<CR>' },
+  { ['<Leader>dJ']      = '<cmd>lua require("dap").step_into()<CR>' },
+  { ['<Leader>de']      = '<cmd>lua require("dapui").eval()<CR>' },
+  { ['<Leader>dq']      = '<cmd>lua require("dap").disconnect({ restart = false, terminateDebuggee = true }, function() require("dap").close() end)<CR>' },
 }
 
 ---------------------------------------------
