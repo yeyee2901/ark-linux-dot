@@ -11,6 +11,16 @@ export PATH=$HOME/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 # export PATH=$PATH:$HOME/Citra/citra/build/bin/Release
 
+# FLUTTER STUFFS
+export PATH=$PATH:$HOME/flutter/bin
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+alias emulator="/opt/android-sdk/emulator/emulator"
+export PATH=$PATH:$ANDROID_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+
 # ALIASES
 alias l='exa -g --icons'
 alias ll='exa -g --icons -l'
