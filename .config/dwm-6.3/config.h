@@ -12,8 +12,8 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 /* static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12", "Symbols Nerd Font:size=14" }; */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:style=Bold:size=12";
+static const char *fonts[]          = { "Iosevka Nerd Font:size=12" };
+static const char dmenufont[]       = "Iosevka Nerd Font:style=Bold:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -21,9 +21,9 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 
 /* USER DEFINED COLOR */
-static const char main_color[]	    = "#114078";
-static const char fg_black[]        = "#111111";
-static const char fg_white[]        = "#dddddd";
+static const char main_color[]	    = "#416693";
+static const char fg_black[]        = "#262626";
+static const char fg_white[]        = "#EBEBEB";
 
 static const char *colors[][3]      = {
 	/*               fg           bg          border   */
@@ -54,7 +54,7 @@ static const Rule rules[] = {
 
 
 /* LAYOUT(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
