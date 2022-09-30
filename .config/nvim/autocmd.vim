@@ -4,6 +4,7 @@ augroup Yanking
   autocmd TextYankPost * lua require("vim.highlight").on_yank({timeout = 300, on_visual = false})
 augroup END
 
+" C Like files
 augroup IndentationGroup
   autocmd!
   autocmd FileType objc,objcpp,lua,php,javascript,typescript,javascriptreact,typescriptreact,html,css set tabstop=2

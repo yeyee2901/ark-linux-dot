@@ -58,6 +58,18 @@ saga.init_lsp_saga {
     tabe = 't',
     quit = 'q',
   },
+
+  show_outline = {
+    win_position = 'right',
+    win_with = '',
+    win_width = 40,
+    auto_enter = true,
+    auto_preview = true,
+    virt_text = '┃',
+    jump_key = 'o',
+    -- auto refresh when change buffer
+    auto_refresh = true,
+  }
 }
 
 -- update LSP capabilities to include nvim-cmp (completion)
@@ -84,7 +96,7 @@ local custom_on_attach = function(client, bufnr)
 
     -- The signature floating_window is reaaaallyy big, and i have to
     -- disable it so I can read the completion pop up menu
-    floating_window = false,
+    floating_window = true,
 
     use_lspsaga = true,
   }
@@ -102,9 +114,6 @@ local custom_on_attach = function(client, bufnr)
       false
     )
   end
-
-  -- outline using aerial.nvim
-  require('aerial').on_attach(client, bufnr)
 end
 
 lspconfig.gopls.setup {

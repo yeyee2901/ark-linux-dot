@@ -77,8 +77,6 @@ NORMAL_MODE_MAPPING = {
   -- PLUGIN: Nvim-tree
   { ['<Leader>n'] = '<cmd>NvimTreeToggle<CR>' },
 
-  -- PLUGIN: Aerial.nvim (symbol outline)
-  { ['<Leader>o'] = "<cmd>AerialToggle right<CR>"},
 
   -- PLUGIN: Telescope
   { ['<Leader>t?'] = '<cmd>Telescope keymaps<CR>' },
@@ -117,8 +115,18 @@ NORMAL_MODE_MAPPING = {
   -- { ['<Leader>lr'] = '<cmd>lua vim.lsp.buf.references()<CR>' },  -- substituted by "Lspsaga lsp_finder"
   { ['<Leader>j'] = '<cmd>lua vim.diagnostic.goto_next()<CR>' },
   { ['<Leader>k'] = '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
-  { ['<Leader>k'] = '<cmd>lua vim.diagnostic.goto_prev()<CR>' },
   { ['<Leader>r'] = '<cmd>lua vim.lsp.buf.rename()<CR>' },
+
+  -- outline using LspSaga
+  { ['<Leader>o'] = "<cmd>LSoutlineToggle<CR>"},
+
+  -- untuk clear document highlight
+  { ['<Leader>lc'] = '<cmd>lua vim.lsp.buf.clear_references()<CR>' },
+
+  -- I dont want to do this but oh well
+  { ['<C-LeftMouse>'] = '<cmd>lua vim.lsp.buf.definition()<CR>' },
+  { ['<M-LeftMouse>'] = '<C-o>' },
+  { ['<2-LeftMouse>']  = '<cmd>lua vim.lsp.buf.hover()<CR>' },
 
   -- PLUGIN: LSP saga
   { ['<Leader>lp'] = '<cmd>Lspsaga peek_definition<CR>' },

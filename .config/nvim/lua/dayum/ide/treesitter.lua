@@ -51,7 +51,9 @@ require('nvim-treesitter.configs').setup {
 
   highlight = {
     enable = true,
-    disable = {},
+    disable = {
+      'help'
+    },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled ().
@@ -71,6 +73,7 @@ require('nvim-treesitter.configs').setup {
       'javascriptreact',
       'typescriptreact',
       'go',
+      'help'
     },
   },
 }

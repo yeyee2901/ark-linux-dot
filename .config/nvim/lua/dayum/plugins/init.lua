@@ -19,6 +19,7 @@ require('packer').startup(function(use)
   use { 'andweeb/presence.nvim' }
 
   -- THEME
+  use { 'EdenEast/nightfox.nvim' }
   use { 'olimorris/onedarkpro.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'kyazdani42/nvim-web-devicons' }
@@ -36,7 +37,6 @@ require('packer').startup(function(use)
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'hrsh7th/cmp-path' }
   use { 'quangnguyen30192/cmp-nvim-ultisnips' }
-  use { 'stevearc/aerial.nvim' }
   use {
     'glepnir/lspsaga.nvim',
     branch = 'main',
@@ -66,6 +66,7 @@ require('packer').startup(function(use)
   -- NOTE TAKING
   use {
     'nvim-neorg/neorg',
+    lock = true,
     config = function()
       require('neorg').setup {
         -- Tell Neorg what modules to load

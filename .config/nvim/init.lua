@@ -20,7 +20,8 @@ require 'dayum.plugins'
 -- SECTION: UI
 require 'dayum.theme'
 
-vim.cmd [[source $HOME/.config/nvim/autocmd.vim]]
+-- vim.cmd [[source $HOME/.config/nvim/autocmd.vim]]
+require 'autocommands'
 
 -- SECTION: GLOBALS
 require 'my-globals'
