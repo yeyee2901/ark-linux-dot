@@ -58,5 +58,8 @@ flameshot &
 # START NETWORK MANAGER APPLET (nm-applet)
 nm-applet &
 
+# START BLUETOOTH MANAGER APPLET (blueman-applet``)
+blueman-applet &
+
 # START WINDOW MANAGER (DWM - Dynamic Window Manager)
 exec dwm
