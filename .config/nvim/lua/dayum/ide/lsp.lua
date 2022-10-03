@@ -87,10 +87,10 @@ saga.init_lsp_saga {
 
 -- update LSP capabilities to include nvim-cmp (completion)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-capabilities.snippetSupport = true
+local capabilities_updated = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities_updated.snippetSupport = true
 
-local custom_on_attach = function(client, bufnr)
+local custom_on_attach = function(_, _)
   -- Better function signature hinting
   require('lsp_signature').on_attach {
     bind = true, -- Mandatory for config
@@ -113,31 +113,16 @@ local custom_on_attach = function(client, bufnr)
 
     use_lspsaga = true,
   }
-
-  -- TODO: kenapa ini ga jalan di update 0.8.2 (?)
-  -- highlight words with same context
-  if client.server_capabilities.document_highlight then
-    vim.api.nvim_exec(
-      [[
-      augroup LSP_DOC_HIGHLIGHT
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorHold <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-      false
-    )
-  end
 end
 
 lspconfig.gopls.setup {
   cmd = { '/home/yeyee/go/bin/gopls' },
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
 lspconfig.ccls.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
   init_options = {
     diagnostics = {
@@ -162,7 +147,7 @@ lspconfig.ccls.setup {
 
 -- ALTERNATIVE: (masih coba-coba)
 lspconfig.jedi_language_server.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
@@ -174,13 +159,13 @@ lspconfig.jedi_language_server.setup {
 
 -- npm i -g intelephense
 lspconfig.intelephense.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
 -- npm i -g typescript typescript-language-server
 lspconfig.tsserver.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
@@ -225,20 +210,20 @@ lspconfig.eslint.setup {
 
 -- npm i -g bashls
 lspconfig.bashls.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
   filetypes = { 'bash', 'zsh', 'sh' },
 }
 
 -- npm i -g vim-language-server
 lspconfig.vimls.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
 -- npm i -g docker-file-language-server-nodejs
 lspconfig.dockerls.setup {
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
   on_attach = custom_on_attach,
 }
 
@@ -289,7 +274,7 @@ require('flutter-tools').setup {
     },
 
     on_attach = custom_on_attach,
-    capabilities = capabilities,
+    capabilities = capabilities_updated,
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
@@ -307,7 +292,7 @@ table.insert(runtime_path, 'lua/?/init.lua')
 
 require('lspconfig').sumneko_lua.setup {
   on_attach = custom_on_attach,
-  capabilities = capabilities,
+  capabilities = capabilities_updated,
 
   settings = {
     Lua = {
