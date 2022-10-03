@@ -84,7 +84,13 @@ require('nightfox').setup {
 }
 
 vim.cmd [[ autocmd VimEnter * highlight BufferDefaultTabpageFill guibg=NONE ]]
-vim.cmd [[colorscheme carbonfox]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrent guibg=#545556 ]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrentSign guibg=#545556 ]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIndex guibg=#545556 ]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrentTarget guibg=#545556 ]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIcon guibg=#545556 ]]
+vim.cmd [[ autocmd VimEnter * highlight BufferCurrentMod guibg=#545556 ]]
+vim.cmd [[ colorscheme nightfox ]]
 
 -- ADDTIONAL CUSTOM HIGHLIGHT -----------------------------------------------------
 -- Additional custom highlighting
@@ -97,4 +103,4 @@ vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIc
 vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=NONE]]
 
 -- cursorline highlight
-vim.cmd [[hi CursorLine guibg=#0F3868]]
+vim.cmd [[hi CursorLine guibg=#0A2544]]

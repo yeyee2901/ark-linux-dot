@@ -69,7 +69,20 @@ saga.init_lsp_saga {
     jump_key = 'o',
     -- auto refresh when change buffer
     auto_refresh = true,
-  }
+  },
+  symbol_in_winbar = {
+    enable = true,
+    in_custom = false,      -- use custom handler
+    click_support = false,  -- apa itu mouse
+    separator = ' ',
+
+    -- define how to customize filename, eg: %:., %
+    -- if not set, use default value `%:t`
+    -- more information see `vim.fn.expand` or `expand`
+    -- ## only valid after set `show_file = true`
+    show_file = false,
+    file_formatter = '%:t',
+  },
 }
 
 -- update LSP capabilities to include nvim-cmp (completion)
@@ -101,6 +114,7 @@ local custom_on_attach = function(client, bufnr)
     use_lspsaga = true,
   }
 
+  -- TODO: kenapa ini ga jalan di update 0.8.2 (?)
   -- highlight words with same context
   if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
@@ -287,33 +301,33 @@ require('flutter-tools').setup {
 }
 
 -- SUMNEKO LUA
--- local runtime_path = vim.split(package.path, ';')
--- table.insert(runtime_path, 'lua/?.lua')
--- table.insert(runtime_path, 'lua/?/init.lua')
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
 
--- require('lspconfig').sumneko_lua.setup {
---   on_attach = custom_on_attach,
---   capabilities = capabilities,
+require('lspconfig').sumneko_lua.setup {
+  on_attach = custom_on_attach,
+  capabilities = capabilities,
 
---   settings = {
---     Lua = {
---       runtime = {
---         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---         version = 'LuaJIT',
---         -- Setup your lua path
---         path = runtime_path,
---       },
---       diagnostics = {
---         globals = { 'vim', 'use' },
---       },
---       workspace = {
---         -- Make the server aware of Neovim runtime files
---         library = vim.api.nvim_get_runtime_file('', true),
---       },
---       -- Do not send telemetry data containing a randomized but unique identifier
---       telemetry = {
---         enable = false,
---       },
---     },
---   },
--- }
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        globals = { 'vim', 'use' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file('', true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}

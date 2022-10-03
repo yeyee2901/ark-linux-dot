@@ -2,7 +2,7 @@ require('go').setup {
   goimport = 'gopls', -- if set to 'gopls' will use golsp format
   gofmt = 'gopls', -- if set to gopls will use golsp format
   max_line_len = 90,
-  tag_transform = false,
+  tag_transform = "camelcase",
   test_dir = '',
   comment_placeholder = '   ',
   lsp_cfg = false, -- false: use your own lspconfig
