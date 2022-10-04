@@ -137,11 +137,12 @@ NORMAL_MODE_MAPPING = {
   { ['TT'] = '<cmd>ToggleTerm<CR>' },
   { ['TH'] = '<cmd>ToggleTerm direction=horizontal size=10<CR>' },
 
-  -- PLUGIN: GO.nvim
+  -- PLUGIN: Go.nvim
   { ['<Leader>Gt'] = ':GoAddTag<CR>'},
   { ['<Leader>Gi'] = ':GoImport<CR>'},
   { ['<Leader>Ga'] = ':GoImport<CR>'},
   { ['<Leader>Gm'] = ':GoModTidy<CR>'},
+  { ['<Leader>GT'] = ':GoTestSum<CR>'},
 
   -- PLUGIN: Flutter
   { ['<Leader>Fo'] = ':FlutterOutlineToggle<CR>'},

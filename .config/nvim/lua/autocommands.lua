@@ -4,12 +4,25 @@ local autocmd = vim.api.nvim_create_autocmd
 -- highlight on yank
 local yank_group = augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
+  group = yank_group,
   pattern = '*',
   callback = function()
     require('vim.highlight').on_yank {
       timeout = 300,
       on_visual = false,
     }
+  end,
+})
+
+-- fak yu folding
+local folding_group = augroup('FoldingGroup', { clear = true })
+autocmd("BufWinEnter", {
+  pattern = "*",
+  group = folding_group,
+  callback = function()
+    vim.opt.foldenable = false
+    vim.opt.foldmethod = "manual"
+    vim.opt.foldlevelstart = 99
   end,
 })
 

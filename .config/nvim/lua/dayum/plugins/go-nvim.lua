@@ -4,6 +4,7 @@ require('go').setup {
   max_line_len = 90,
   tag_transform = "camelcase",
   test_dir = '',
+  test_runner = 'gotestsum',
   comment_placeholder = '   ',
   lsp_cfg = false, -- false: use your own lspconfig
   lsp_on_attach = false, -- use on_attach from go.nvim

@@ -110,6 +110,7 @@ require('packer').startup(function(use)
 
   -- GO utils
   use { 'ray-x/go.nvim' }
+  use { 'ray-x/guihua.lua' }
 
   -- FLUTTER
   use { 'akinsho/flutter-tools.nvim' }
