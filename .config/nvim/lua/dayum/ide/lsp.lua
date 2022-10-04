@@ -80,7 +80,7 @@ saga.init_lsp_saga {
     -- if not set, use default value `%:t`
     -- more information see `vim.fn.expand` or `expand`
     -- ## only valid after set `show_file = true`
-    show_file = false,
+    show_file = true,
     file_formatter = '%:t',
   },
 }

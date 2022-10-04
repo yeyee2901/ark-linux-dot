@@ -27,6 +27,7 @@ local my_options = {
   splitbelow = true,
   splitright = true,
   laststatus = 3,     -- 3 = global, 2 = each window
+  winbar = "%f",      -- %f = show filename
 }
 
 -- Allow Lua syntax in vimscripts ('l' as in lua)

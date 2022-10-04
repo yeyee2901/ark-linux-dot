@@ -16,12 +16,12 @@ autocmd('TextYankPost', {
 
 -- fak yu folding
 local folding_group = augroup('FoldingGroup', { clear = true })
-autocmd("BufWinEnter", {
-  pattern = "*",
+autocmd('BufWinEnter', {
+  pattern = '*',
   group = folding_group,
   callback = function()
     vim.opt.foldenable = false
-    vim.opt.foldmethod = "manual"
+    vim.opt.foldmethod = 'manual'
     vim.opt.foldlevelstart = 99
   end,
 })
@@ -46,7 +46,7 @@ autocmd('FileType', {
 -- Protobuf files untuk gRPC development
 local group_protobuf_files_indent = augroup('ProtobufGroup', { clear = true })
 autocmd('FileType', {
-  group = protobuf_files_indent,
+  group = group_protobuf_files_indent,
   pattern = 'proto',
   callback = function()
     set_indentation(2)
