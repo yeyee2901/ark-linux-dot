@@ -67,7 +67,7 @@ require('nightfox').setup {
     },
 
     modules = {
-      barbar = true,
+      barbar = false,
       cmp = true,
       dap_ui = true,
       diagnostic = { enable = true },
@@ -83,13 +83,13 @@ require('nightfox').setup {
   groups = {},
 }
 
-vim.cmd [[ autocmd VimEnter * highlight BufferDefaultTabpageFill guibg=NONE ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrent guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentSign guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIndex guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentTarget guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIcon guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentMod guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferDefaultTabpageFill guibg=NONE ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrent guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentSign guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIndex guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentTarget guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIcon guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentMod guibg=#545556 ]]
 vim.cmd [[ colorscheme nightfox ]]
 
 -- ADDTIONAL CUSTOM HIGHLIGHT -----------------------------------------------------
@@ -101,6 +101,9 @@ vim.cmd [[autocmd BufEnter * highlight Normal guibg=NONE]]
 vim.cmd [[highlight NormalFloat guibg=NONE]]
 vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=NONE]]
 vim.cmd [[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=NONE]]
+
+-- vertical split
+vim.cmd[[autocmd VimEnter * highlight VertSplit guifg=#5475E2]]
 
 -- cursorline highlight
 vim.cmd [[hi CursorLine guibg=#0A2544]]
