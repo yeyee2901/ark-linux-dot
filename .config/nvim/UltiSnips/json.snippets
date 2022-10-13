@@ -202,3 +202,59 @@ snippet eslint_nextjs "Template .eslintrc for NextJS project"
   }
 }
 endsnippet
+
+snippet prettier "prettier config using prettier.config.json"
+{
+    "arrowParens": "always",
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "semi": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "bracketSameLine": false,
+    "jsxSingleQuote": true
+}
+endsnippet
+
+snippet eslint_astro "eslint config for astro-js"
+{
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "plugins": ["astro"],
+      "env": {
+        "node": true,
+        "astro/astro": true,
+        "es2020": true
+      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"],
+        "sourceType": "module"
+      },
+      "rules": {
+        "astro/no-conflict-set-directives": "error",
+        "astro/no-unused-define-vars-in-style": "error",
+        "astro/no-set-html-directive": "error"
+      }
+    },
+    {
+      "files": ["**/*.astro/*.js", "*.astro/*.js"],
+      "env": {
+        "browser": true,
+        "es2020": true
+      },
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "no-unused-vars": "error",
+
+        "prettier/prettier": "off"
+      }
+    }
+  ]
+}
+endsnippet

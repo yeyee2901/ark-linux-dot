@@ -111,6 +111,15 @@ require('packer').startup(function(use)
   -- GO utils
   use { 'ray-x/go.nvim' }
   use { 'ray-x/guihua.lua' }
+  use {
+    'edolphin-ydf/goimpl.nvim',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-telescope/telescope.nvim' },
+      { 'nvim-treesitter/nvim-treesitter' },
+    },
+  }
 
   -- FLUTTER
   use { 'akinsho/flutter-tools.nvim' }

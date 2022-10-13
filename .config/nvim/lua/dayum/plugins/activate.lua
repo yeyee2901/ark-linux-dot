@@ -1,5 +1,5 @@
 require 'dayum.plugins.telescope'
-require 'dayum.plugins.go-nvim'
+require 'dayum.plugins.golang-tools'
 require 'dayum.plugins.indent-blankline'
 require 'dayum.plugins.distant'
 require 'dayum.plugins.color-utils'

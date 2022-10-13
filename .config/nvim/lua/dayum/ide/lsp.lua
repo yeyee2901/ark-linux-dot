@@ -169,7 +169,14 @@ lspconfig.tsserver.setup {
   on_attach = custom_on_attach,
 }
 
--- install locally in the project
+
+-- npm i -g @astrojs/language-server
+lspconfig.astro.setup{
+  capabilities = capabilities_updated,
+  on_attach = custom_on_attach
+}
+
+-- npm i -g eslint
 lspconfig.eslint.setup {
   filetypes = {
     'javascript',
@@ -178,6 +185,7 @@ lspconfig.eslint.setup {
     'typescript',
     'typescriptreact',
     'typescript.tsx',
+    'astro'
   },
   settings = {
     codeAction = {

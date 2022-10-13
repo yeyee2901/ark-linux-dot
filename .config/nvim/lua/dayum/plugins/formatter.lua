@@ -10,6 +10,7 @@ local prettier = function()
     exe = 'prettier',
     stdin = true,
     args = {
+      '--plugin-search-dir=.',
       '--stdin-filepath',
       vim.api.nvim_buf_get_name(0),
     },
@@ -77,6 +78,7 @@ end
 require('formatter').setup {
   logging = true,
   filetype = {
+    astro = { prettier },
     html = { prettier },
     css = { prettier },
     json = { prettier },

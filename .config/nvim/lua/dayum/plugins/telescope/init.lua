@@ -28,10 +28,10 @@ require('telescope').setup {
     layout_config = {
       horizontal = {
         height = 0.9,
-        preview_cutoff = 120,        -- if column assigned to telescope < ini, maka preview di skip
-        preview_width = 90,          -- ini yg mbok cari
-        prompt_position = "bottom",
-        width = 0.8
+        preview_cutoff = 120,
+        preview_width = 70,
+        prompt_position = 'bottom',
+        width = 0.8,
       },
       vertical = {
         height = preview_size,
@@ -68,5 +68,5 @@ require('telescope').load_extension 'ultisnips'
 -- check for flutter extension
 local flutter_ok, _ = pcall(require, 'flutter')
 
-require('telescope').load_extension('flutter')
+require('telescope').load_extension 'flutter'
 vim.keymap.set('n', '<leader>tF', require('telescope').extensions.flutter.commands)

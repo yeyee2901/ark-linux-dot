@@ -1,3 +1,4 @@
+-- go.nvim humongous life quality improvement plugin for golang development 😎
 require('go').setup {
   goimport = 'gopls', -- if set to 'gopls' will use golsp format
   gofmt = 'gopls', -- if set to gopls will use golsp format
@@ -12,3 +13,7 @@ require('go').setup {
   dap_debug = false,
   lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
 }
+
+-- GoImpl (implement a struct methods based on interface stubs)
+require('telescope').load_extension 'goimpl'
+vim.keymap.set('n', '<leader>tGs', require('telescope').extensions.goimpl.goimpl, { noremap = true })

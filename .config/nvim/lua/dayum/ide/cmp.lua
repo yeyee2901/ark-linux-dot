@@ -2,7 +2,7 @@
 -- Calling ExpandTrigger,
 -- will make nvim-cmp completion behave
 -- like a UltiSnips placeholder.
--- this is possible because nvim-cmp has complete snippet support
+-- now nvim-cmp depends on snippet engine
 
 local options = {
   UltiSnipsExpandTrigger = '<M-CR>',
