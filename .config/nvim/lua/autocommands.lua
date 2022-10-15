@@ -64,10 +64,10 @@ autocmd('FileType', {
 })
 
 -- astro files
-local group_astro_files = augroup('_UserAstroGroup', { clear = true })
+local group_astro_files = augroup('_UserWebDevGroup', { clear = true })
 autocmd('FileType', {
   group = group_astro_files,
-  pattern = 'astro',
+  pattern = 'json,yaml,astro,javascript,html,css,typescript,javascriptreact,typescriptreact,vue,svelte',
   callback = function()
     set_indentation(2)
   end

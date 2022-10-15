@@ -138,6 +138,9 @@ require('packer').startup(function(use)
     requires = { 'mfussenegger/nvim-dap' },
   }
 
+  -- KITTY FILETYPE PLUGIN
+  use { 'fladson/vim-kitty' }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

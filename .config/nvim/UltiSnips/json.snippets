@@ -223,6 +223,7 @@ snippet eslint_astro "eslint config for astro-js"
     {
       "files": ["*.astro"],
       "plugins": ["astro"],
+      "extends": ["plugin:astro/recommended"],
       "env": {
         "node": true,
         "astro/astro": true,
@@ -241,20 +242,46 @@ snippet eslint_astro "eslint config for astro-js"
       }
     },
     {
-      "files": ["**/*.astro/*.js", "*.astro/*.js"],
+      "files": [
+        "**/*.astro/*.js",
+        "*.astro/*.js",
+        ".astro/*.ts",
+        "**/*.astro/*.ts"
+      ],
       "env": {
+        "node": true,
         "browser": true,
-        "es2020": true
+        "ecmaVersion": 2015
       },
+      "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "sourceType": "module"
       },
       "rules": {
         "no-unused-vars": "error",
-
         "prettier/prettier": "off"
       }
     }
   ]
+}
+endsnippet
+
+snippet astro_tsconfig "tsconfig.json for astro project"
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+
+    /* IMPORT ALIASING*/
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"],
+      "@posts": ["src/posts/*"]
+    },
+
+    /* RULES */
+    "importsNotUsedAsValues": "error"
+  },
 }
 endsnippet

@@ -3,12 +3,14 @@ local gs_ok, _ = pcall(require, 'gitsigns')
 if gs_ok then
   require('gitsigns').setup {
     signs = {
-      add = { hl = 'GitSignsAdd', text = '+', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-      change = { hl = 'GitSignsChange', text = '~', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
-      delete = { hl = 'GitSignsDelete', text = '-', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+      add = { hl = 'GitSignsAdd', text = '🮋', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
+      change = { hl = 'GitSignsChange', text = '🮋', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
+      delete = { hl = 'GitSignsDelete', text = '🮋', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+      topdelete = { hl = 'GitSignsDelete', text = '🮋', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+      changedelete = { hl = 'GitSignsChange', text = '🮋', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
     },
-    signcolumn = false, -- Toggle with `:Gitsigns toggle_signs`
-    numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+    signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
+    numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 
@@ -63,5 +65,10 @@ if gs_ok then
     yadm = {
       enable = false,
     },
+
+    on_attach = function(bufnr)
+      -- change default color
+      vim.cmd[[ hi GitSignsAdd guifg=#378006 ]]
+    end
   }
 end

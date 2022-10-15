@@ -4,14 +4,14 @@ MY_HOME = os.getenv 'HOME'
 -- SECTION: SERVER SETTINGS
 vim.fn.sign_define(
   'DiagnosticSignError',
-  { text = '', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError', numhl = 'DiagnosticSignError' }
+  { text = '✗', texthl = 'DiagnosticSignError', linehl = 'DiagnosticSignError', numhl = 'DiagnosticSignError' }
 )
 
-vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn', numhl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = '⁉', texthl = 'DiagnosticSignWarn', numhl = 'DiagnosticSignWarn' })
 
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', numhl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo', numhl = 'DiagnosticSignInfo' })
 
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', numhl = 'DiagnosticSignHint' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint', numhl = 'DiagnosticSignHint' })
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
@@ -72,8 +72,8 @@ saga.init_lsp_saga {
   },
   symbol_in_winbar = {
     enable = true,
-    in_custom = false,      -- use custom handler
-    click_support = false,  -- apa itu mouse
+    in_custom = false, -- use custom handler
+    click_support = false, -- apa itu mouse
     separator = ' ',
 
     -- define how to customize filename, eg: %:., %
@@ -169,11 +169,10 @@ lspconfig.tsserver.setup {
   on_attach = custom_on_attach,
 }
 
-
 -- npm i -g @astrojs/language-server
-lspconfig.astro.setup{
+lspconfig.astro.setup {
   capabilities = capabilities_updated,
-  on_attach = custom_on_attach
+  on_attach = custom_on_attach,
 }
 
 -- npm i -g eslint
@@ -185,7 +184,7 @@ lspconfig.eslint.setup {
     'typescript',
     'typescriptreact',
     'typescript.tsx',
-    'astro'
+    'astro',
   },
   settings = {
     codeAction = {
