@@ -14,15 +14,11 @@ alias DMENU_LAUNCH=" \
 "
 
 declare -a choices=(
-    "Notes"
-    "Whatsapp"
-
+    "Kitty - Kerjaan"
     "WPS - Writer"
     "WPS - Spreadsheet"
     "WPS - Powerpoint"
     "WPS - PDF"
-
-    "quit"
 )
 
 # Pipe the choices array to dmenu
@@ -35,11 +31,11 @@ if [[ "$choice" == "quit" ]]; then
 
 elif [[ "$choice" ]]; then
     case $choice in
-        "Notes")
-            kitty -e nvim $HOME/Documents/neorg-notes ;;
-
-        "Whatsapp")
-            chromium --new-window "https://web.whatsapp.com" ;;
+        Kitty*)
+            case $choice in
+                *Kerjaan)
+                    kitty --session $HOME/.config/kitty/sessions/kerjaan-session.conf ;;
+            esac ;;
 
         WPS*)
             case $choice in
