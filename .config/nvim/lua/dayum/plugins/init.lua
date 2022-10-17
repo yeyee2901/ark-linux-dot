@@ -62,35 +62,6 @@ require('packer').startup(function(use)
   use { 'tpope/vim-fugitive' }
   use { 'lewis6991/gitsigns.nvim' }
 
-  -- NOTE TAKING
-  use {
-    'nvim-neorg/neorg',
-    lock = true,
-    config = function()
-      require('neorg').setup {
-        -- Tell Neorg what modules to load
-        load = {
-          ['core.defaults'] = {}, -- Load all the default modules
-          ['core.keybinds'] = { -- Configure core.keybinds
-            config = {
-              default_keybinds = true,
-              neorg_leader = '<Leader>w',
-            },
-          },
-          ['core.norg.concealer'] = {}, -- Allows for use of icons
-          ['core.norg.dirman'] = { -- Manage your directories with Neorg
-            config = {
-              workspaces = {
-                my_workspace = '~/neorg',
-              },
-            },
-          },
-        },
-      }
-    end,
-    requires = 'nvim-lua/plenary.nvim',
-  }
-
   -- COLOR UTILS
   -- use { 'norcalli/nvim-colorizer.lua' }
   use { 'max397574/colortils.nvim' }

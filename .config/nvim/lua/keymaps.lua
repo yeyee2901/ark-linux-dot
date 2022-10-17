@@ -30,6 +30,10 @@ NORMAL_MODE_MAPPING = {
   { ['<Leader>so'] = '<cmd>source Session.vim<CR>' },
   { ['<Leader>ss'] = '<cmd>mksession!<CR>' },
 
+  -- FOLDING
+  -- activate fold
+  {  ['<Leader>zf'] = ':set foldmethod=indent<CR>'},
+
   -- SEARCHING & REPLACE
   { ['S'] = ':%s' },
   { ['<S-h>'] = '<cmd>set hlsearch!<CR>' },
