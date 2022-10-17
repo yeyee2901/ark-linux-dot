@@ -22,11 +22,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
 # ALIASES
-alias l='exa -g --icons'
-alias ll='exa -g --icons -l'
-alias la='exa -g --icons -la'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias autopep8='autopep8.py'
+alias l="exa -g --icons"
+alias ll="exa -g --icons -l"
+alias la="exa -g --icons -la"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias autopep8="autopep8.py"
 
 # alias kerjaan
 
@@ -43,6 +43,7 @@ export XSECURELOCK_COMPOSITE_OBSCURER=0
 alias work="cd $HOME/KerjaPraktek/Work/"
 alias activate="source devEnv/bin/activate"
 alias git_tree="git log --graph --pretty=oneline --abbrev-commit"
-alias vi='nvim'
-alias pdf='wpspdf'
-
+alias vi="nvim"
+alias pdf="wpspdf"
+alias lg="lazygit"
+alias lgdot="lazygit --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
