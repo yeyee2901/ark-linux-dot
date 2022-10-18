@@ -12,8 +12,10 @@ require('go').setup {
   lsp_codelens = false,
   dap_debug = false,
   lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+  lsp_inlay_hints = {
+    enable = false
+  }
 }
 
 -- GoImpl (implement a struct methods based on interface stubs)
 require('telescope').load_extension 'goimpl'
-vim.keymap.set('n', '<leader>tGs', require('telescope').extensions.goimpl.goimpl, { noremap = true })

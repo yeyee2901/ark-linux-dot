@@ -31,16 +31,15 @@ require('nvim-treesitter.configs').setup {
     'javascript',
     'typescript',
     'tsx',
+    'astro',
     'php',
     'python',
     'vim',
-    'toml',
     'json',
     'query',
     'jsdoc',
     'latex',
     'comment',
-    'norg',
   },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
@@ -52,7 +51,7 @@ require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     disable = {
-      'help'
+      'help',
     },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
@@ -73,8 +72,9 @@ require('nvim-treesitter.configs').setup {
       'javascriptreact',
       'typescriptreact',
       'go',
-      'help'
+      'help',
     },
   },
 }
 
+require("dayum.ide.gg-treesitter")

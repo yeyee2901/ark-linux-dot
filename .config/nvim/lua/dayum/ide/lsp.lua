@@ -87,7 +87,7 @@ saga.init_lsp_saga {
 
 -- update LSP capabilities to include nvim-cmp (completion)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-local capabilities_updated = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities_updated = require('cmp_nvim_lsp').default_capabilities(capabilities)
 capabilities_updated.snippetSupport = true
 
 local custom_on_attach = function(_, _)
