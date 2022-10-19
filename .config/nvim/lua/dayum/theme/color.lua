@@ -83,13 +83,13 @@ require('nightfox').setup {
   groups = {},
 }
 
-vim.cmd [[ autocmd VimEnter * highlight BufferDefaultTabpageFill guibg=NONE ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrent guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentSign guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIndex guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentTarget guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIcon guibg=#545556 ]]
-vim.cmd [[ autocmd VimEnter * highlight BufferCurrentMod guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferDefaultTabpageFill guibg=NONE ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrent guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentSign guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIndex guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentTarget guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentIcon guibg=#545556 ]]
+-- vim.cmd [[ autocmd VimEnter * highlight BufferCurrentMod guibg=#545556 ]]
 vim.cmd [[ colorscheme nightfox ]]
 
 -- ADDTIONAL CUSTOM HIGHLIGHT -----------------------------------------------------
