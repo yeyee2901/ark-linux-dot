@@ -4,23 +4,21 @@
 -- | |\  | | |___  | |_| |   \ V /    | |  | |  | |
 -- |_| \_| |_____|  \___/     \_/    |___| |_|  |_|
 --
+-- author: yeyee2901
 
 -- SECTION: BASIC SETTINGS
-require 'basic-settings'
+require("basic-settings")
 
 -- SECTION: KEYMAPS
-require 'keymaps'
+require("keymaps")
 
 -- SECTION: IDE experience
-require 'dayum.ide'
+require("user.ide")
 
 -- SECTION: PLUGINS
-require 'dayum.plugins'
+require("user.plugins")
 
 -- SECTION: UI
-require 'dayum.theme'
+require("user.theme")
 
-require 'autocommands'
-
--- SECTION: GLOBALS
-require 'my-globals'
+require("autocommands")
