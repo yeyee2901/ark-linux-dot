@@ -13,9 +13,9 @@
 filetype indent plugin on
 syntax on
 set encoding=utf8
-set number
+set nonumber
 set clipboard=unnamedplus
-set mouse=a
+set mouse=""
 set noswapfile
 set tabstop=4
 set softtabstop=4

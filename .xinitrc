@@ -36,13 +36,10 @@ fi
 source $HOME/.alias_envs
 
 # SET BACKGROUND (using nitrogen restore will remember last wallpaper set)
-nitrogen --restore
+nitrogen --restore &
 
 # START COMPOSITOR (picom)
 picom &
-
-# START STATUS BAR (Suckless Status)
-slstatus &
 
 # START NOTIFICATION DAEMON (dunst)
 dunst &
@@ -60,6 +57,14 @@ nm-applet &
 
 # START BLUETOOTH MANAGER APPLET (blueman-applet``)
 blueman-applet &
+
+# START STATUS BAR (Suckless Status)
+slstatus &
+
+# SET NO SCREENSAVER / SCREEN BLANKING
+xset s noblank
+xset s off
+xset -dpms
 
 # START WINDOW MANAGER (DWM - Dynamic Window Manager)
 exec dwm

@@ -116,6 +116,13 @@ lspconfig.gopls.setup({
 	cmd = { MY_HOME .. "/go/bin/gopls" },
 	capabilities = capabilities_updated,
 	on_attach = custom_on_attach,
+    settings = {
+        gopls = {
+            buildFlags = {
+                "-buildvcs=false",
+            }
+        }
+    }
 })
 
 -- apt install
