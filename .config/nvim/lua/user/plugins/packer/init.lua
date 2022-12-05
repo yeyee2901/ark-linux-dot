@@ -63,7 +63,7 @@ require("packer").startup(function(use)
 	use({ "tpope/vim-surround", lock = true, commit = "bf3480dc9ae7bea34c78fbba4c65b4548b5b1fea" })
 
 	-- INDENT BLANKLINE
-	use({ "lukas-reineke/indent-blankline.nvim", lock = true, commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" })
+	-- use({ "lukas-reineke/indent-blankline.nvim", lock = true, commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" })
 
 	-- GO utils
 	use({ "ray-x/go.nvim", lock = true, commit = "7720ddcbeac7fee4a2d30079f3c3c9d26a1236b5" })
@@ -79,6 +79,13 @@ require("packer").startup(function(use)
 		lock = true,
         commit = "df010c46af75f3231e5369e60dd39a69fbc9449b",
 	})
+
+    -- RUST utils
+    use ({ 
+        "simrat39/rust-tools.nvim", 
+        lock = true,
+        commit = "99fd123",
+    })
 
 	-- DEBUGGER
 	use({ "mfussenegger/nvim-dap", lock = true, commit = "3d0d7312bb2a8491eb2927504e5cfa6e81b66de4" })

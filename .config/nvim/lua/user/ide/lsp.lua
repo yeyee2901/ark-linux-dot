@@ -119,11 +119,33 @@ lspconfig.gopls.setup({
     settings = {
         gopls = {
             buildFlags = {
+                -- I have noticed issues when developing
+                -- using root user in docker, even though it's already
+                -- marked as save.directory from git config, gopls keeps yelling
+                -- if the go-module name includes a version control information
+                -- e.g: github.com/yeyee2901/my-module
+                -- produces error:
+                --      'error obtaining VCS status: exit status 128'
+                -- apparently this is only present in go > 1.17
+                -- The building process runs fine though, so we just need to tell
+                -- gopls to ignore this diagnostic
                 "-buildvcs=false",
             }
         }
     }
 })
+
+-- rustup component add rust-analyzer
+local rust_tools = require("user.plugins.rust-tools")
+rust_tools.init(
+    rust_tools.init_opts(capabilities_updated, custom_on_attach)
+)
+
+-- lspconfig.rust_analyzer.setup({
+--     cmd = { "rustup", "run", "stable", "rust-analyzer" },
+-- 	capabilities = capabilities_updated,
+-- 	on_attach = custom_on_attach,
+-- })
 
 -- apt install
 lspconfig.ccls.setup({
