@@ -30,7 +30,7 @@ XF86AudioMicMute
 
 # Launch Terminal
 super + t
-    kitty
+    wezterm
 
 # Launch Browser
 super + w

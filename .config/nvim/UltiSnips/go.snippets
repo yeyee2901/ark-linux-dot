@@ -29,3 +29,26 @@ if ${1:val}, ok := ${2:expression} ; ok {
 	$3
 }
 endsnippet
+
+snippet gofun "idiomatic goroutine with done channel"
+${1:doneChannel} := make(chan struct{})
+go func(done chan<- struct{}) {
+	defer func() {
+		done <- struct{}{}
+	}()
+	
+	${2:// do something here...}
+}($1)
+endsnippet
+
+snippet deferfun "defer function"
+defer func(${1:param any}){
+	$3
+}(${2:args})
+endsnippet
+
+snippet init "init function"
+func init() {
+	${1:// body}
+}
+endsnippet

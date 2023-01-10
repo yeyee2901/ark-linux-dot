@@ -3,7 +3,7 @@ require("go").setup({
 	goimport = "gopls", -- if set to 'gopls' will use golsp format
 	gofmt = "gopls", -- if set to gopls will use golsp format
 	max_line_len = 90,
-	tag_transform = "camelcase",
+	tag_transform = "snakecase",
 	test_dir = "",
 	test_runner = "gotestsum",
 	comment_placeholder = "   ",
