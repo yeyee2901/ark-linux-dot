@@ -50,7 +50,6 @@ require("packer").startup(function(use)
 	use({ "mhartington/formatter.nvim", lock = true, commit = "88aa63ba216708611b472d8737b96af71c2f3785" })
 
 	-- GIT SUPERPOWER
-	use({ "tpope/vim-fugitive", lock = true, commit = "dd8107cabf5fe85df94d5eedcae52415e543f208" })
 	use({ "lewis6991/gitsigns.nvim", lock = true, commit = "21ab05c2629ef613b1c3452d12469f936855648b" })
 
 	-- COLOR SELECTOR
@@ -69,6 +68,10 @@ require("packer").startup(function(use)
         lock = true,
         commit = "1b9df57",
     }
+
+    -- TINT
+    use ({"levouh/tint.nvim", lock = true, commit = "f6a2598"})
+
 
 	-- GO utils
 	use({ "ray-x/go.nvim", lock = true, commit = "7720ddcbeac7fee4a2d30079f3c3c9d26a1236b5" })
@@ -93,17 +96,14 @@ require("packer").startup(function(use)
     })
 
 	-- DEBUGGER
-	use({ "mfussenegger/nvim-dap", lock = true, commit = "3d0d7312bb2a8491eb2927504e5cfa6e81b66de4" })
-	use({ "leoluz/nvim-dap-go", lock = true, commit = "c2902bb96c45e872d947d7e174775e652439add4" })
-	use({
-		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" },
-		lock = true,
-        commit = "0a63115d72e071223e1711ce630e9e7b5737c948",
-	})
-
-	-- KITTY FILETYPE PLUGIN
-	use({ "fladson/vim-kitty", lock = true, commit = "b2d3453bf7925b5657f853afe3ca0f9b6edf30b4" })
+	-- use({ "mfussenegger/nvim-dap", lock = true, commit = "3d0d7312bb2a8491eb2927504e5cfa6e81b66de4" })
+	-- use({ "leoluz/nvim-dap-go", lock = true, commit = "c2902bb96c45e872d947d7e174775e652439add4" })
+	-- use({
+	-- 	"rcarriga/nvim-dap-ui",
+	-- 	requires = { "mfussenegger/nvim-dap" },
+	-- 	lock = true,
+        -- commit = "0a63115d72e071223e1711ce630e9e7b5737c948",
+	-- })
 
     -- automatically install packer after cloning
 	if packer_bootstrap then

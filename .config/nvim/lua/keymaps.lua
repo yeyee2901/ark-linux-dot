@@ -102,12 +102,6 @@ NORMAL_MODE_MAPPING = {
 	-- PLUGIN: Formatter.nvim
 	{ ["<Leader>ff"] = "<cmd>Format<CR>" },
 
-	-- PLUGIN: Fugitive
-	{ ["<Leader>gs"] = "<cmd>G<CR>" },
-	{ ["<Leader>ga"] = "<cmd>Git add .<CR>" },
-	{ ["<Leader>gh"] = "<cmd>diffget //2<CR>" },
-	{ ["<Leader>gl"] = "<cmd>diffget //3<CR>" },
-
 	-- PLUGIN: LSP
 	{ ["K"] = "<cmd>lua vim.lsp.buf.hover()<CR>" },
 	{ ["<Leader>K"] = "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
@@ -121,11 +115,6 @@ NORMAL_MODE_MAPPING = {
 
 	-- untuk clear document highlight
 	{ ["<Leader>lc"] = "<cmd>lua vim.lsp.buf.clear_references()<CR>" },
-
-	-- I dont want to do this but oh well
-	-- { ["<C-LeftMouse>"] = "<cmd>lua vim.lsp.buf.definition()<CR>" },
-	-- { ["<M-LeftMouse>"] = "<C-o>" },
-	-- { ["<2-LeftMouse>"] = "<cmd>lua vim.lsp.buf.hover()<CR>" },
 
 	-- PLUGIN: LSP saga
 	{ ["<Leader>lp"] = "<cmd>Lspsaga peek_definition<CR>" },

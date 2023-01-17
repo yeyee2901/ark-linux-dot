@@ -52,3 +52,21 @@ func init() {
 	${1:// body}
 }
 endsnippet
+
+snippet grpc_test_dialer
+func dialer($1) func(context.Context, string) (net.Conn, error) {
+	list := bufconn.Listen(1024 * 1024)
+
+	// server
+	go func() {
+		if err := app.Server.Serve(list); err != nil {
+			log.Fatal(err)
+		}
+	}()
+
+	// dialer (client)
+	return func(context.Context, string) (net.Conn, error) {
+		return list.Dial()
+	}
+}
+endsnippet
