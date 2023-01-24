@@ -48,13 +48,34 @@ require("nightfox").setup({
 vim.cmd([[ colorscheme nightfox ]])
 
 -- ADDTIONAL CUSTOM HIGHLIGHT -----------------------------------------------------
--- transparent = best
-vim.cmd([[autocmd BufEnter * highlight TelescopeNormal guibg=NONE]])
-vim.cmd([[autocmd BufEnter * highlight TelescopePreviewTitle guibg=NONE]])
-vim.cmd([[autocmd BufEnter * highlight TelescopePromptTitle guibg=NONE]])
-vim.cmd([[autocmd BufEnter * highlight Normal guibg=NONE]])
-vim.cmd([[highlight NormalFloat guibg=NONE]])
-vim.cmd([[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeFolderIcon guibg=NONE]])
-vim.cmd([[autocmd BufEnter,VimEnter,FileType NvimTree highlight NvimTreeNormalNC guibg=NONE]])
-vim.cmd([[autocmd VimEnter * highlight VertSplit guifg=#5475E2]])
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+-- Set transparent background for Nvim-Tree
+local user_augroup_transparent = augroup("_UserAugroupTransparent", { clear = true })
+
+-- nvim tree to transparent
+autocmd({"BufEnter", "VimEnter", "FileType"}, {
+    group = user_augroup_transparent,
+    pattern = "NvimTree",
+    callback = function()
+        vim.cmd[[highlight NvimTreeFolderIcon guibg=NONE]]
+        vim.cmd[[highlight NvimTreeNormalNC guibg=NONE]]
+    end,
+})
+
+-- telescope to transparent
+autocmd({ "BufEnter" }, {
+    group = user_augroup_transparent,
+    pattern = "*",
+    callback = function()
+        vim.cmd([[hi TelescopeNormal guibg=NONE]])
+        vim.cmd([[hi TelescopePreviewTitle guibg=NONE]])
+        vim.cmd([[hi TelescopePromptTitle guibg=NONE]])
+        vim.cmd([[hi Normal guibg=NONE]])
+        vim.cmd([[highlight NormalFloat guibg=NONE]])
+    end,
+})
+
+vim.cmd([[autocmd WinNew * highlight VertSplit guifg=#5475E2 guibg=#5475E2]])
 vim.cmd([[hi CursorLine guibg=#0A2544]])
